@@ -1,0 +1,12 @@
+= form_for(@user) do |f|
+  = error_msg @user
+  | name:
+  = f.text_field :name
+  br
+  | email:
+  = f.text_field :email
+  br
+  | password:
+  = f.text_field :passwd
+  br
+  = f.submit

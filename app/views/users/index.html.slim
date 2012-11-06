@@ -1,0 +1,27 @@
+= title 'user list'
+h1
+  | all users
+= notice
+= link_to 'create a user', new_user_path
+table.b.olt
+  tbody
+    tr
+      td
+        | name
+      td
+        | email
+      td
+        | created at
+      td colspan=3  
+    - @users.each do |user|
+      tr
+        td
+          = link_to user.name, user_path(user)
+        td
+          = user.email
+        td
+          = user.created_at
+        td
+          = link_to t(:edit), edit_user_path(user)
+        td
+          = link_to t(:delete), user_path(user), confirm:t('confirm.delete'), method: :delete
