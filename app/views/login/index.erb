@@ -1,0 +1,40 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<script>
+  
+  
+  
+</script>
+
+
+
+<h3><%= flash[:message] %></h3>
+
+<% if session[:email] != nil  %>
+  <%= "Hello #{session[:username]} Welcome  ，"  %>
+  <a href="login/logout">Logout</a>
+<% else %>
+
+  <%= form_tag("/login/login_in",:method=>:post) do %>
+    <table>
+      <tr>
+        <td>Email : </td>
+        <td><input type="text" name="txtemail" /></td>
+      </tr>
+      <tr>
+        <td>Password : </td>
+        <td><input type="password" name="txtpassword" /></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Login" /></td>
+        <td><a href="/login/register">Register</a></td>
+      </tr>
+    </table>
+  <% end %>
+
+<% end %>
+
+

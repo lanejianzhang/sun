@@ -1,0 +1,26 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+
+<%= form_tag("/login/create",:method=>:post) do %>
+<table>
+  <tr>
+    <td>User Name</td>
+    <td><input type="text" name="txtUserName" /></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><input type="text" name="txtEmail" /></td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><input type="password" name="txtPassword" /></td>
+  </tr>
+  <tr>
+    <td><input type="submit" value="submit" /></td>
+    <td><a href="/login">Return</a></td>
+  </tr>
+</table>
+<% end %>
