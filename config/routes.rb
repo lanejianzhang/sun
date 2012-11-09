@@ -1,30 +1,14 @@
 Sun::Application.routes.draw do
-  
   resources :users
-
-  root :to => 'home#index'
+  root :to => 'home#index'  
+  get "login" => "login#index"
+  get "login/logout"
+  match "login/login_in" => "login#login_in"
+  match "login/register" => "login#register"
+  match "login/create" => "login#create"
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  #match ':controller(/:action(/:id))(.:format)'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
